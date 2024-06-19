@@ -12,7 +12,7 @@ const Home = () => {
           <h2 className="text-4xl font-bold mx-8">SCHOOL EVENTS</h2>
           <div className="flex-grow border-t-[6px] mr-8 border-black"></div>
         </div>
-        <div>
+        <div className="">
           <Events />
         </div>
       </div>
