@@ -5,8 +5,8 @@ const ContentCardNewsHome = ({ content, isMain }) => {
   const title = content?.title || "";
   const description = content?.description || "";
   const imageUrl = content?.imageUrl || "";
-  const maxLengthTitle = 30;
-  const maxLengthDesc = 70;
+  const maxLengthTitle = 22;
+  const maxLengthDesc = 120;
 
   const errorImage = "Error Image";
 
@@ -37,10 +37,10 @@ const ContentCardNewsHome = ({ content, isMain }) => {
       <div
         className={`${isMain ? "" : "w-2/3 pl-4 pr-4"} pt-4 break-words pb-2`}
       >
-        <h3 className="text-xl font-semibold mb-2 break-words">
-          <span dangerouslySetInnerHTML={{ __html: truncatedTitle }} />
+        <h3 className="text-xl font-semibold mb-2 break-words h-[40px]">
+          <span>{truncatedTitle}</span>
         </h3>
-        <p className="text-sm text-gray-700 mb-4 p-2 break-words">
+        <p className="text-sm text-gray-700 mb-4 p-2 px2 break-words h-[90px]">
           <span dangerouslySetInnerHTML={{ __html: truncatedDescription }} />
         </p>
         <div className="text-right">

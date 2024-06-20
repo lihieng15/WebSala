@@ -10,7 +10,7 @@ export default defineConfig({
     strictPort: true, // Fail if port is not available
     proxy: {
       "/api": {
-        target: "http://194.233.87.193:8080/api",
+        target: "http://194.233.87.193:8080/api/",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
