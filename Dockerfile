@@ -1,4 +1,4 @@
-# Use Node.js 14 as the base image
+# Use Node.js 20 as the base image
 FROM node:20
 
 # Set the working directory inside the container
@@ -16,7 +16,8 @@ COPY . .
 # Build the Vite application using npm
 RUN npm run build
 
+# Expose the port the app runs on
+EXPOSE 8000
 
-
-# Start the Vite application on port 8000
+# Start the Vite application
 CMD ["npm", "run", "dev"]
