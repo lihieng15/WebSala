@@ -8,7 +8,7 @@ const ListAllContentNews = () => {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
-  const articleName = "School News";
+  const articleName = "School Events";
 
   useEffect(() => {
     const fetchContents = async () => {

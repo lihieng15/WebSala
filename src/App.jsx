@@ -21,12 +21,13 @@ import SingleMember from "./homepage/components/ManagementTeams/SingleMember";
 import SingleContent from "./homepage/components/Contents/SingleContent";
 import SchoolNewsPage from "./homepage/pages/SchoolNewsPage";
 import ListAllContentNews from "./homepage/components/News/ListAllContentNews";
+import ListAllContentEvents from "./homepage/components/Events/ListAllContentEvent";
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          {/*   homepage route */}
+          {/* homepage */}
           <Route element={<Layout />}>
             {/* pages*/}
             <Route path="/" element={<Home />} />
@@ -50,6 +51,7 @@ const App = () => {
             {/* contents */}
             {/* news */}
             <Route path="/schoolnews" element={<ListAllContentNews />} />
+            <Route path="/schoolevents" element={<ListAllContentEvents />} />
             <Route path="/new/:id" element={<SchoolNewsPage />} />
             {/* <Route path="/new/:title" element={<SchoolNewsPage />} /> */}
             {/* <Route path="/contents" element={<ContentList />} /> */}
@@ -59,7 +61,6 @@ const App = () => {
             {/* Teams*/}
             <Route path="/teams/:id" element={<SingleMember />} />
           </Route>
-
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
