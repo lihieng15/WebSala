@@ -18,7 +18,11 @@ const ContentCardMainNews = ({ content, isMain }) => {
       : title;
 
   return (
-    <div className={`flex ${isMain ? "flex-col" : "mb-4"} border rounded-lg`}>
+    <div
+      className={`flex ${
+        isMain ? "flex-col" : "mb-4"
+      } border rounded-lg slice-in-left`}
+    >
       <div className={`${isMain ? "w-full" : "w-1/3"}`}>
         <img
           src={imageUrl}

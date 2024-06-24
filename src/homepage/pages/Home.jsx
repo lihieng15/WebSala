@@ -24,7 +24,7 @@ const Home = () => {
           <h2 className="text-4xl font-bold mx-8">NEWS</h2>
           <div className="flex-grow border-t-[6px] mr-8 border-black"></div>
         </div>
-        <div className="mb-10 font-khmermont">
+        <div className="mb-10  font-khmermont">
           <News />
         </div>
       </div>
@@ -47,14 +47,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div
-        className="relative w-full h-[700px] bg-cover bg-center  font-khmermont"
-        style={{
-          backgroundImage: `url(${DataInformation})`,
-        }}
-      >
-        <DataInformation />
+      <div className="relative w-full  h-[400px] md:h-[700px] bg-cover bg-center font-khmermont">
+        <div>
+          <DataInformation />
+        </div>
       </div>
+
       <div>
         {/* <div className="flex items-center mb-5">
           <div className="flex-grow  border-t-[6px] ml-8 border-black"></div>
