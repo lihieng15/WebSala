@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchData } from "../api/Api"; // Assuming fetchData is a function to fetch data
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Spinner from "./Spinner";
 
 const BannerCard = () => {
   const [slides, setSlides] = useState([]);
@@ -15,10 +16,10 @@ const BannerCard = () => {
         if (data && data.object && Array.isArray(data.object)) {
           setSlides(data.object);
         } else {
-          setError("No slides found in the response");
+          setError("No Banner found in the response");
         }
       } catch (error) {
-        setError("Error fetching slides: " + error.message);
+        setError("Not Banner found.");
       } finally {
         setLoading(false);
       }
@@ -28,11 +29,20 @@ const BannerCard = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Spinner />
+      </div>
+    );
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div className="text-center h-12 mt-2 text-red-600 font-bold">
+        {" "}
+        {error}
+      </div>
+    );
   }
 
   return (

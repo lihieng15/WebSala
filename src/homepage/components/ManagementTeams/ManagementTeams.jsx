@@ -1,6 +1,7 @@
 import React from "react";
 import useFetchTeams from "../../hooks/useFetchTeams";
 import TeamCardHome from "./TeamsCardHome";
+import Spinner from "../Spinner";
 
 const ManagementTeams = () => {
   const { teamMembers, loading, error } = useFetchTeams();
@@ -8,22 +9,24 @@ const ManagementTeams = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        Loading...
+        <Spinner />
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-screen text-red-600">
-        Error loading team data.
+      <div className="flex items-center justify-center min-h-screen font-bold font-mono text-red-600">
+        No Teams found
       </div>
     );
   }
 
   // Determine the team members to display
   const displayedTeamMembers =
-    teamMembers.length > 4 ? teamMembers.slice(0, 3) : teamMembers;
+    teamMembers && teamMembers.length > 4
+      ? teamMembers.slice(0, 3)
+      : teamMembers;
 
   return (
     <div className="bg-gray-100 py-16">

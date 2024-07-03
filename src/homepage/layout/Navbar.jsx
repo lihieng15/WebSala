@@ -18,7 +18,10 @@ const Navbar = () => {
   const reduceContent = (contents) => {
     return contents.reduce((acc, content, index) => {
       if (index < 20) {
-        acc.push({ key: `/content/${content.id}`, label: content.title });
+        acc.push({
+          key: `/content/${content.id}`,
+          label: content.title,
+        });
       }
       return acc;
     }, []);

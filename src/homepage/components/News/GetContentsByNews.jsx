@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { fetchContentsByArtName } from "../../api/Api";
 import ContentCardNewsHome from "./ContentCardNewsHome";
 import ContentCardMainNews from "./ContentCardMainNews";
+import Spinner from "../Spinner";
 
 const GetContentsByNews = () => {
   const [contents, setContents] = useState([]);
@@ -14,7 +15,7 @@ const GetContentsByNews = () => {
     try {
       const response = await fetchContentsByArtName(articleName);
       if (response && Array.isArray(response.object)) {
-        setContents(response.object.reverse()); // Reverse to get latest first
+        setContents(response.object.reverse());
       } else {
         console.error("No articles found for the specified category");
         setContents([]);
@@ -22,7 +23,7 @@ const GetContentsByNews = () => {
       setLoading(false);
     } catch (error) {
       console.error("Error fetching articles:", error.message);
-      setError("Error fetching articles. Please try again later.");
+      setError("No News Found");
       setLoading(false);
     }
   }, [articleName]);
@@ -46,11 +47,17 @@ const GetContentsByNews = () => {
   }, [contents]);
 
   if (loading) {
-    return <p className="text-center text-gray-600">Loading ...</p>;
+    return (
+      <p className="text-center text-gray-600">
+        <Spinner />
+      </p>
+    );
   }
 
   if (error) {
-    return <p className="text-center text-red-600">{error}</p>;
+    return (
+      <p className="text-center font-bold font-mono text-red-600">{error}</p>
+    );
   }
 
   return (

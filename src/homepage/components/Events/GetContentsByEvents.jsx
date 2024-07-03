@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ContentCardE from "./ContentCardEventHome";
 import { Link } from "react-router-dom";
+import Spinner from "../Spinner";
 
 const GetContentsByEvents = () => {
   const [contents, setContents] = useState([]);
@@ -69,7 +70,9 @@ const GetContentsByEvents = () => {
   return (
     <div className="container mx-auto px-4 place-content-center">
       {loading ? (
-        <p className="text-center text-gray-600 mt-4">Loading ...</p>
+        <p className="text-center text-gray-600 mt-4">
+          <Spinner />
+        </p>
       ) : contents.length > 0 ? (
         <Slider {...settings} className="mt-8">
           {contents.map((content) => (
@@ -79,7 +82,9 @@ const GetContentsByEvents = () => {
           ))}
         </Slider>
       ) : (
-        <p className="text-center text-gray-600 mt-8">No Events found.</p>
+        <p className="text-center text-red-600 font-bold font-mono mt-8">
+          No Events found.
+        </p>
       )}
       <div className="flex justify-center mt-14">
         <Link to="/schoolevents">

@@ -76,7 +76,7 @@ export const fetchContentsByArticlesId = async (id) => {
 export const fetchMediaListByContentsId = async (id) => {
   try {
     const response = await fetch(
-      `http://localhost:8080/api/medias/content/${id}`
+      `http://localhost:8080/api/album/content/${id}`
     );
 
     if (!response.ok) {

@@ -7,6 +7,7 @@ import {
   FaUserTie,
 } from "react-icons/fa";
 import DataInformationimg from "../images/DataInformation.png";
+import Spinner from "./Spinner";
 
 const DataInformation = () => {
   const [data, setData] = useState({
@@ -43,7 +44,7 @@ const DataInformation = () => {
 
         setData(mappedData);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Bad Request Data", error);
       }
     };
 
@@ -78,7 +79,7 @@ const DataInformation = () => {
       !data.totalClass &&
       !data.totalPrograms &&
       !data.totalTeacher ? (
-        <p className="text-lg text-white">Loading</p>
+        <Spinner />
       ) : (
         <div className="flex flex-col md:flex-row flex-wrap max-w-screen-lg mt-72 mx-auto p-4">
           {data.totalStudents &&
