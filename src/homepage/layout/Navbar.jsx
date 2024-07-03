@@ -16,8 +16,8 @@ const Navbar = () => {
   const [navbarShadow, setNavbarShadow] = useState(false);
 
   const reduceContent = (contents) => {
-    return contents.reduce((acc, content, index) => {
-      if (index < 20) {
+    return contents.slice(0, 20).reduce((acc, content, index) => {
+      if (index < 10) {
         acc.push({
           key: `/content/${content.id}`,
           label: content.title,

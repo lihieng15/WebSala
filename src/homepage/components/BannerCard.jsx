@@ -30,7 +30,7 @@ const BannerCard = () => {
 
   if (loading) {
     return (
-      <div>
+      <div className="h-24">
         <Spinner />
       </div>
     );
@@ -38,15 +38,14 @@ const BannerCard = () => {
 
   if (error) {
     return (
-      <div className="text-center h-12 mt-2 text-red-600 font-bold">
-        {" "}
+      <div className="text-center h-12 mt-2 text-red-600 font-mono font-bold">
         {error}
       </div>
     );
   }
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <Carousel
         showArrows={true}
         showThumbs={false}
@@ -62,7 +61,7 @@ const BannerCard = () => {
             <img
               src={slide.imageUrl}
               alt={slide.name}
-              className="w-full h-500px object-cover"
+              className="w-full h-[500px] object-cover"
             />
           </div>
         ))}

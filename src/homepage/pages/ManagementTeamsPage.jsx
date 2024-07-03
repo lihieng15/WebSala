@@ -1,13 +1,16 @@
 import React from "react";
 import useFetchTeams from "../hooks/useFetchTeams";
 import TeamCard from "../components/ManagementTeams/TeamsCard";
+import Spinner from "../components/Spinner";
 
 const ManagementTeamsPage = () => {
   const { teamMembers, loading, error } = useFetchTeams();
 
   if (loading) {
     return (
-      <div className="container mx-auto px-4 py-8 text-center">Loading...</div>
+      <div className="container mx-auto px-4 py-8 text-center">
+        <Spinner />
+      </div>
     );
   }
 

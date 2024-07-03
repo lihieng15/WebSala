@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchData } from "../../api/Api";
+import Spinner from "../Spinner";
 
 const SingleMember = () => {
   const { id } = useParams();
@@ -24,7 +25,11 @@ const SingleMember = () => {
   }, [id]);
 
   if (loading) {
-    return <p className="text-center text-gray-600">Loading ...</p>;
+    return (
+      <p className="text-center text-gray-600">
+        <Spinner />
+      </p>
+    );
   }
 
   return (

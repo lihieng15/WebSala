@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchContentsByArtName } from "../../api/Api";
 import ContentCardNav from "../Contents/ContentCardNav";
+import Spinner from "../Spinner";
 
 const GetArticles = ({ categoryName }) => {
   const [contents, setContents] = useState([]);
@@ -31,7 +32,9 @@ const GetArticles = ({ categoryName }) => {
   return (
     <div className="flex justify-center ">
       {loading ? (
-        <p className="text-center text-gray-600">Loading articles...</p>
+        <p className="text-center text-gray-600">
+          <Spinner />
+        </p>
       ) : contents.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {contents.map((content) => (
