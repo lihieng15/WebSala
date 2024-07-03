@@ -31,8 +31,19 @@ const GetContentsByNews = () => {
     fetchContents();
   }, [fetchContents]);
 
-  const mainContent = useMemo(() => contents[0], [contents]);
-  const otherContents = useMemo(() => contents.slice(1, 4), [contents]);
+  const { mainContent, otherContents } = useMemo(() => {
+    return contents.reduce(
+      (acc, content, index) => {
+        if (index === 0) {
+          acc.mainContent = content;
+        } else if (index < 4) {
+          acc.otherContents.push(content);
+        }
+        return acc;
+      },
+      { mainContent: null, otherContents: [] }
+    );
+  }, [contents]);
 
   if (loading) {
     return <p className="text-center text-gray-600">Loading ...</p>;

@@ -32,7 +32,7 @@ export const fetchArticlesByCatName = async (categoryName) => {
 };
 export const fetchContentsByArtName = async (articleName) => {
   try {
-    const allContentsResponse = await fetchData("contents");
+    const allContentsResponse = await fetchData("contents/status");
 
     if (allContentsResponse && Array.isArray(allContentsResponse.object)) {
       const filteredContents = allContentsResponse.object.filter(
