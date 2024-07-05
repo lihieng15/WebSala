@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ContentCardN = ({ content }) => {
   // Destructure the content object to get required fields
-  const { id, title, description, imageUrl } = content;
+  const { id, title, description, thumbnail } = content;
 
   const maxLengthTitle = 34;
   const maxLengthDesc = 170;
@@ -22,7 +22,7 @@ const ContentCardN = ({ content }) => {
       <div className="w-[230px] h-[200px]">
         <img
           className="w-[200px] h-[200px] rounded-l-md"
-          src={imageUrl}
+          src={thumbnail}
           alt=""
         />
       </div>
@@ -35,7 +35,6 @@ const ContentCardN = ({ content }) => {
           dangerouslySetInnerHTML={{ __html: truncatedDescription }}
         />
 
-        {/* View Details Button */}
         <div className="flex justify-end mt-4">
           <Link to={`/content/${id}`} className="text-green-700 underline">
             View Details

@@ -4,7 +4,7 @@ import ContentCardN from "../News/ContentCardN";
 import Pagination from "../Pagination"; // Adjust the path according to your file structure
 import Spinner from "../Spinner";
 
-const ListAllContentNews = () => {
+const ListAllContentEvents = () => {
   const [contents, setContents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -60,14 +60,16 @@ const ListAllContentNews = () => {
         ) : (
           <p className="text-center text-gray-600">No articles found.</p>
         )}
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-        />
+        {totalPages > 1 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        )}
       </div>
     </div>
   );
 };
 
-export default ListAllContentNews;
+export default ListAllContentEvents;

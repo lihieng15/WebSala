@@ -45,7 +45,7 @@ const BannerCard = () => {
   }
 
   return (
-    <div className="relative ">
+    <div className="relative w-full">
       <Carousel
         showArrows={true}
         showThumbs={false}
@@ -61,7 +61,7 @@ const BannerCard = () => {
             <img
               src={slide.imageUrl}
               alt={slide.name}
-              className="w-full h-[500px] object-cover"
+              className="w-full h-[200px] md:h-[300px] lg:h-[500px] object-cover"
             />
           </div>
         ))}
