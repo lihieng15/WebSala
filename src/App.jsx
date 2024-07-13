@@ -8,12 +8,7 @@ import About from "./homepage/pages/About";
 import Contact from "./homepage/pages/Contact";
 import OurProgramsPage from "./homepage/pages/OurProgramsPage";
 import Layout from "./homepage/layout/Layout";
-import CategoryList from "./homepage/components/Categories/CategoryList";
-import ListByCategory from "./homepage/components/Categories/ListByCategory";
-import ListByArticle from "./homepage/components/Articles/ListByArticle";
 import Admission from "./homepage/pages/Admission";
-import AllArtByCat from "./homepage/components/Categories/AllArtByCat";
-import ArticleList from "./homepage/components/Articles/ArticleList";
 import ActivitiesPage from "./homepage/pages/ActivitiesPage";
 import ManagementTeamsPage from "./homepage/pages/ManagementTeamsPage";
 import EventsPage from "./homepage/pages/EventsPages";
@@ -39,14 +34,7 @@ const App = () => {
             <Route path="/event/:id" element={<EventsPage />} />
             {/* <Route path="/events" element={<EventsPage />} /> */}
             <Route path="/admission" element={<Admission />} />
-            {/* categories*/}
-            <Route path="/category" element={<CategoryList />} />
-            <Route path="/categories" element={<CategoryList />} />
-            <Route path="/category/:id" element={<ListByCategory />} />
-            <Route path="/category/:id/articles" component={<AllArtByCat />} />
-            {/* articles*/}
-            <Route path="/articles" element={<ArticleList />} />
-            <Route path="/article/:id" element={<ListByArticle />} />
+
             <Route path="*" element={<NotFound />} />
             {/* contents */}
             {/* news */}

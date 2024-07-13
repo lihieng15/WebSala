@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchContentsByArtName } from "../../api/Api";
-import ContentCardN from "../News/ContentCardN";
+import ContentCardE from "../Events/ContentCardE";
 import Pagination from "../Pagination"; // Adjust the path according to your file structure
 import Spinner from "../Spinner";
 
@@ -53,7 +53,7 @@ const ListAllContentEvents = () => {
           <div className="mt-8">
             {currentItems.map((content) => (
               <div key={content.id} className="px-2">
-                <ContentCardN content={content} />
+                <ContentCardE content={content} />
               </div>
             ))}
           </div>
