@@ -5,8 +5,42 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: "0.0.0.0", // Bind to all network interfaces
-    port: process.env.PORT || 8000, // Use PORT env variable or default to 8000
-    strictPort: true, // Fail if port is not available
+    host: true,
+    port: 8000,
+    proxy: {
+      "/api": {
+        target: "https://api.southwest-internationalschool.site/api/",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
+  preview: {
+    host: true,
+    port: 8000,
+  },
+  build: {
+    rollupOptions: {
+      input: "./index.html",
+      output: {
+        manualChunks: {
+          // Split vendor code into a separate chunk
+          vendor: ["react", "react-dom"],
+          lodash: ["lodash"],
+          homepage: [
+            "./src/homepage/pages/Home",
+            "./src/homepage/pages/AboutPage",
+            "./src/homepage/pages/Contact",
+            "./src/homepage/pages/ManagementTeamsPage",
+            "./src/homepage/pages/EventsPages",
+            "./src/homepage/pages/SchoolNewsPage",
+          ],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom", "lodash"],
   },
 });

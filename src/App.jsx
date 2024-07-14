@@ -4,12 +4,9 @@ import React from "react";
 // homepage import --------------
 import NotFound from "./homepage/pages/NotFound";
 import Home from "./homepage/pages/Home";
-import About from "./homepage/pages/About";
+import About from "./homepage/pages/AboutPage";
 import Contact from "./homepage/pages/Contact";
-import OurProgramsPage from "./homepage/pages/OurProgramsPage";
 import Layout from "./homepage/layout/Layout";
-import Admission from "./homepage/pages/Admission";
-import ActivitiesPage from "./homepage/pages/ActivitiesPage";
 import ManagementTeamsPage from "./homepage/pages/ManagementTeamsPage";
 import EventsPage from "./homepage/pages/EventsPages";
 import SingleMember from "./homepage/components/ManagementTeams/SingleMember";
@@ -28,12 +25,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/ourprograms" element={<OurProgramsPage />} />
             <Route path="/managementteams" element={<ManagementTeamsPage />} />
-            <Route path="/activities" element={<ActivitiesPage />} />
             <Route path="/event/:id" element={<EventsPage />} />
-            {/* <Route path="/events" element={<EventsPage />} /> */}
-            <Route path="/admission" element={<Admission />} />
 
             <Route path="*" element={<NotFound />} />
             {/* contents */}
