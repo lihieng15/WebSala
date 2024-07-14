@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchData } from "../api/Api"; // Assuming fetchData is a function to fetch data
+import { fetchData } from "../api/Api";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Spinner from "./Spinner";

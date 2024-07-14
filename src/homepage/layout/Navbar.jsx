@@ -35,7 +35,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) {
+      if (window.scrollY === 100) {
         setNavbarBackground("bg-green-100");
         setNavbarShadow(true);
       } else {

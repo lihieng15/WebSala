@@ -66,8 +66,69 @@ body {
   transition-delay: 0s;
 }
 
+.show-in-down {
+  animation: ShowInDown 4s ease-in forwards;
+}
+
+@keyframes ShowInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slice-in-up {
+  animation: SliceInUp 4s ease-in-out forwards;
+}
+
+@keyframes SliceInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 4s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.slice-in-left-img {
+  animation: sliceInLeft 5s ease-in-out forwards;
+}
+
+.slice-in-right-img {
+  animation: sliceInRight 5s ease-in-out forwards;
+}
+
+.slice-in-left-line {
+  animation: sliceInLeft 4s ease-in-out forwards;
+}
+
+.slice-in-right-line {
+  animation: sliceInRight 4s ease-in-out forwards;
+}
+
 .slice-in-left {
-  animation: sliceInLeft 0.5s ease-out forwards;
+  animation: sliceInLeft 1s ease-out forwards;
 }
 
 @keyframes sliceInLeft {
@@ -81,11 +142,11 @@ body {
   }
 }
 
-.slice-in-from-right {
-  animation: sliceInFromRight 0.6s ease-out forwards;
+.slice-in-right {
+  animation: sliceInRight 1s ease-out forwards;
 }
 
-@keyframes sliceInFromRight {
+@keyframes sliceInRight {
   from {
     opacity: 0;
     transform: translateX(100%);

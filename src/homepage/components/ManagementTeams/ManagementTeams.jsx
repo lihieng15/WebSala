@@ -3,6 +3,7 @@ import useFetchTeams from "../../hooks/useFetchTeams";
 import TeamCardHome from "./TeamsCardHome";
 import Spinner from "../Spinner";
 import { Link } from "react-router-dom";
+import HeaderandLineinHomePage from "../HeaderandLineinHomePage";
 
 const ManagementTeams = () => {
   const { teamMembers, loading, error } = useFetchTeams();
@@ -31,14 +32,7 @@ const ManagementTeams = () => {
 
   return (
     <div>
-      {" "}
-      <div className="flex items-center mb-5">
-        <div className="flex-grow  border-t-[6px] ml-8 border-black"></div>
-        <h2 className="font-bold mx-4 text-2xl md:text-4xl md:mx-8">
-          MANAGEMENT TEAMS
-        </h2>
-        <div className="flex-grow border-t-[6px] mr-8 border-black"></div>
-      </div>
+      <HeaderandLineinHomePage title={`MANAGEMENT TEAMS`} />
       <div className="bg-green-50 pt-16">
         <div className="max-w-screen-lg mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">

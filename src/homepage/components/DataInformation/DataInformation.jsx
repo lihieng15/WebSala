@@ -31,13 +31,15 @@ const DataInformation = () => {
   }, []);
 
   return (
-    <div className="top-0 left-0 w-full bg-green-400 flex flex-col items-center justify-center bg-cover bg-center">
+    <div className="top-0 left-0 w-full bg-green-400 flex flex-col items-center justify-center bg-cover bg-center ">
       <img
-        className="w-full hidden md:block"
+        className={`w-full hidden md:block slice-in-left-img`}
         src={DataInformationimg}
         alt="Datainformation"
       />
-      <div className="relative flex flex-col items-center justify-center bg-cover bg-center">
+      <div
+        className={`relative flex flex-col items-center justify-center bg-cover bg-center slice-in-up`}
+      >
         <div className="flex flex-col md:flex-row flex-wrap max-w-screen-lg mx-auto p-4">
           {allDataKeys.map(
             (key) =>
@@ -56,7 +58,7 @@ const DataInformation = () => {
         )}
       </div>
       <img
-        className="w-full hidden md:block"
+        className="w-full hidden md:block slice-in-right-img"
         src={DataInformationimg1}
         alt="Datainformation"
       />

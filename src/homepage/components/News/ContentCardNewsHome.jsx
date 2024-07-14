@@ -24,7 +24,7 @@ const ContentCardNewsHome = ({ content, isMain }) => {
     <div
       className={`flex ${
         isMain ? "flex-col" : ""
-      } border rounded-sm slice-in-from-right`}
+      } border rounded-sm slice-in-right`}
       style={{ maxWidth: "100%" }}
     >
       <div
