@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { fetchData } from "../api/Api";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Spinner from "./Spinner";
+import { InView } from "react-intersection-observer";
+import Spinner from "../components/Spinner";
+import { MdNavigateNext } from "react-icons/md";
+import { GrFormPrevious } from "react-icons/gr";
 
 const BannerCard = () => {
   const [slides, setSlides] = useState([]);
@@ -30,7 +33,7 @@ const BannerCard = () => {
 
   if (loading) {
     return (
-      <div className="h-24">
+      <div className="h-24 flex items-center justify-center">
         <Spinner />
       </div>
     );
@@ -55,14 +58,45 @@ const BannerCard = () => {
         interval={5000}
         stopOnHover={true}
         dynamicHeight={true}
+        renderArrowPrev={(onClickHandler, hasPrev, label) =>
+          hasPrev && (
+            <button
+              type="button"
+              onClick={onClickHandler}
+              title={label}
+              className="absolute top-1/2 left-4 -translate-y-1/2 z-10 bg-transparent hover:bg-slate-300 hover:text-white text-2xl text-gray-500 rounded-full p-2"
+            >
+              <GrFormPrevious />
+            </button>
+          )
+        }
+        renderArrowNext={(onClickHandler, hasNext, label) =>
+          hasNext && (
+            <button
+              type="button"
+              onClick={onClickHandler}
+              title={label}
+              className="absolute top-1/2 right-4 -translate-y-1/2 z-10 bg-transparent hover:bg-slate-300 hover:text-white text-2xl text-gray-500 rounded-full p-2"
+            >
+              <MdNavigateNext />
+            </button>
+          )
+        }
       >
         {slides.map((slide) => (
           <div key={slide.id}>
-            <img
-              src={slide.imageUrl}
-              alt={slide.name}
-              className="w-full h-[200px] md:h-[300px] lg:h-[500px] "
-            />
+            <InView triggerOnce={true} threshold={0.5}>
+              {({ inView, ref }) => (
+                <img
+                  ref={ref}
+                  src={slide.imageUrl}
+                  alt={slide.name}
+                  className={`w-full h-[200px] md:h-[300px] lg:h-[500px] ${
+                    inView ? "animate-fadeIn" : ""
+                  }`}
+                />
+              )}
+            </InView>
           </div>
         ))}
       </Carousel>

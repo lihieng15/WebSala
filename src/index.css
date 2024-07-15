@@ -111,12 +111,27 @@ body {
   }
 }
 
+.slice-in-bottom {
+  animation: sliceInBottom 3s ease-out forwards;
+}
+
+@keyframes sliceInBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .slice-in-left-img {
-  animation: sliceInLeft 5s ease-in-out forwards;
+  animation: sliceInLeft 4s ease-in-out forwards;
 }
 
 .slice-in-right-img {
-  animation: sliceInRight 5s ease-in-out forwards;
+  animation: sliceInRight 4s ease-in-out forwards;
 }
 
 .slice-in-left-line {

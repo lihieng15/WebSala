@@ -5,9 +5,14 @@ import Spinner from "../Spinner";
 import { Link } from "react-router-dom";
 import HeaderandLineinHomePage from "../HeaderandLineinHomePage";
 
+import { useInView } from "react-intersection-observer";
 const ManagementTeams = () => {
   const { teamMembers, loading, error } = useFetchTeams();
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -24,7 +29,6 @@ const ManagementTeams = () => {
     );
   }
 
-  // Determine the team members to display
   const displayedTeamMembers =
     teamMembers && teamMembers.length > 4
       ? teamMembers.slice(0, 3)
@@ -35,11 +39,16 @@ const ManagementTeams = () => {
       <HeaderandLineinHomePage title={`MANAGEMENT TEAMS`} />
       <div className="bg-green-50 pt-16">
         <div className="max-w-screen-lg mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
+          <div
+            ref={ref}
+            className={` ${
+              inView ? "slice-in-bottom" : " opacity-0"
+            } grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16`}
+          >
             {displayedTeamMembers.map((member) => (
               <div
                 key={member.id}
-                className="team-card transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+                className={` transform transition-transform duration-300 hover:scale-105 cursor-pointer`}
               >
                 <TeamCardHome member={member} />
               </div>

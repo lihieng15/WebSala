@@ -5,21 +5,24 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import Spinner from "../Spinner";
-import ContentCardE from "./ContentCardEventHome"; // Assuming ContentCardE is exported properly
+import ContentCardE from "./ContentCardEventHome";
+import { useInView } from "react-intersection-observer";
 
 const GetContentsByEvents = () => {
   const [contents, setContents] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const articleName = "School Events";
+
+  const { ref: sliderRef, inView: sliderInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
 
   useEffect(() => {
     const fetchContents = async () => {
       try {
         const response = await fetchContentsByArtName(articleName);
-
         if (response && Array.isArray(response.object)) {
-          // Sort the contents by id in descending order and limit to 8
           const sortedContents = response.object
             .sort((a, b) => b.id - a.id)
             .slice(0, 8);
@@ -28,14 +31,12 @@ const GetContentsByEvents = () => {
           console.error("No articles found for the specified category");
           setContents([]);
         }
-
         setLoading(false);
       } catch (error) {
         console.error("Error fetching articles:", error.message);
         setLoading(false);
       }
     };
-
     fetchContents();
   }, [articleName]);
 
@@ -77,9 +78,14 @@ const GetContentsByEvents = () => {
           <Spinner />
         </div>
       ) : contents.length > 0 ? (
-        <div className="mt-2 w-full">
+        <div
+          ref={sliderRef}
+          className={`mt-2 w-full transition-opacity duration-700 ${
+            sliderInView ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <Suspense fallback={<Spinner />}>
-            <Slider {...settings} className="w-full  mx-auto">
+            <Slider {...settings} className="w-full mx-auto">
               {contents.map((content) => (
                 <div key={content.id} className="px-2 sm:px-4">
                   <div className="flex justify-between">

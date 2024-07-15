@@ -27,7 +27,7 @@ const MenuItem = ({
       </button>
       {item.children && hoveredMenu === item.key && (
         <ul
-          className="absolute left-0 top-full max-h-64 bg-green-50 text-gray-800 shadow-lg opacity-100 transition-opacity duration-300 z-10 grid gap-x-4 w-72"
+          className="absolute left-0 top-full max-h-64 bg-green-50 text-gray-800 shadow-md shadow-green-400 opacity-100 transition-opacity duration-300 z-10 grid gap-x-4 w-72"
           style={{
             gridTemplateColumns: `repeat(${
               item.children.filter((col) => col.length > 0).length
