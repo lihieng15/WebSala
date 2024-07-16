@@ -11,10 +11,10 @@ const SingleContent = () => {
 
   useEffect(() => {
     const fetchContent = async () => {
+      setLoading(true);
       try {
         const contentsRes = await fetchData(`contents/${id}`);
         setContent(contentsRes.object);
-
         setLoading(false);
       } catch (error) {
         console.error("Error fetching content:", error);
@@ -36,7 +36,7 @@ const SingleContent = () => {
   return (
     <div className="bg-green-100">
       <div className="max-w-full mx-auto px-6 flex flex-col gap-6 md:max-w-[1200px]">
-        <div className="font-khmermont">
+        <div className="font-khmermont slice-in-right">
           <h2 className="text-2xl mt-6 font-bold mb-2 tracking-wider break-words">
             {content.title}
           </h2>

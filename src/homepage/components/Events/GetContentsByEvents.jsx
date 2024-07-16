@@ -81,7 +81,7 @@ const GetContentsByEvents = () => {
         <div
           ref={sliderRef}
           className={`mt-2 w-full transition-opacity duration-700 ${
-            sliderInView ? "opacity-100" : "opacity-0"
+            sliderInView ? "slice-in-left" : "opacity-0"
           }`}
         >
           <Suspense fallback={<Spinner />}>

@@ -97,7 +97,7 @@ body {
 }
 
 .animate-fadeIn {
-  animation: fadeIn 4s ease-in forwards;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 @keyframes fadeIn {
@@ -112,7 +112,7 @@ body {
 }
 
 .slice-in-bottom {
-  animation: sliceInBottom 3s ease-out forwards;
+  animation: sliceInBottom 2s ease-out forwards;
 }
 
 @keyframes sliceInBottom {
@@ -127,19 +127,19 @@ body {
 }
 
 .slice-in-left-img {
-  animation: sliceInLeft 4s ease-in-out forwards;
+  animation: sliceInLeft 2s ease-in-out forwards;
 }
 
 .slice-in-right-img {
-  animation: sliceInRight 4s ease-in-out forwards;
+  animation: sliceInRight 2s ease-in-out forwards;
 }
 
 .slice-in-left-line {
-  animation: sliceInLeft 4s ease-in-out forwards;
+  animation: sliceInLeft 3s ease-in-out forwards;
 }
 
 .slice-in-right-line {
-  animation: sliceInRight 4s ease-in-out forwards;
+  animation: sliceInRight 3s ease-in-out forwards;
 }
 
 .slice-in-left {
@@ -169,19 +169,5 @@ body {
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-
-.spinner {
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }

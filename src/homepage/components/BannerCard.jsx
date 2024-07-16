@@ -58,30 +58,6 @@ const BannerCard = () => {
         interval={5000}
         stopOnHover={true}
         dynamicHeight={true}
-        renderArrowPrev={(onClickHandler, hasPrev, label) =>
-          hasPrev && (
-            <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
-              className="absolute top-1/2 left-4 -translate-y-1/2 z-10 bg-transparent hover:bg-slate-300 hover:text-white text-2xl text-gray-500 rounded-full p-2"
-            >
-              <GrFormPrevious />
-            </button>
-          )
-        }
-        renderArrowNext={(onClickHandler, hasNext, label) =>
-          hasNext && (
-            <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
-              className="absolute top-1/2 right-4 -translate-y-1/2 z-10 bg-transparent hover:bg-slate-300 hover:text-white text-2xl text-gray-500 rounded-full p-2"
-            >
-              <MdNavigateNext />
-            </button>
-          )
-        }
       >
         {slides.map((slide) => (
           <div key={slide.id}>
