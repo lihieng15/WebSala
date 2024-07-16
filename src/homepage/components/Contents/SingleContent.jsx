@@ -62,7 +62,7 @@ const SingleContent = () => {
                       <img
                         src={album.mediaUrl}
                         alt={`Media for ${content.title}`}
-                        className="w-full h-auto object-cover"
+                        className="w-full h-auto"
                       />
                     </div>
                   ))}
