@@ -11,8 +11,16 @@ export default defineConfig({
       "/api": {
         target: "https://api.southwest-internationalschool.site/api/",
         changeOrigin: true,
-        secure: false,
+        secure: true,
       },
+    },
+    hmr: {
+      protocol: process.env.NODE_ENV === "production" ? "wss" : "ws",
+      host:
+        process.env.NODE_ENV === "production"
+          ? "southwest-internationalschool.site"
+          : "localhost",
+      port: process.env.NODE_ENV === "production" ? 443 : 8000,
     },
   },
   preview: {
@@ -24,7 +32,6 @@ export default defineConfig({
       input: "./index.html",
       output: {
         manualChunks: {
-          // Split vendor code into a separate chunk
           vendor: ["react", "react-dom"],
           lodash: ["lodash"],
           homepage: [

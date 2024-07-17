@@ -3,6 +3,7 @@ import { fetchContentsByArtName } from "../../api/Api";
 import ContentCardE from "../Events/ContentCardE";
 import Pagination from "../Pagination";
 import Spinner from "../Spinner";
+import HeaderandLineinHomePage from "../HeaderandLineinHomePage";
 
 const ListAllContentEvents = () => {
   const [contents, setContents] = useState([]);
@@ -44,11 +45,12 @@ const ListAllContentEvents = () => {
 
   return (
     <div className="bg-green-200 min-h-screen">
+      <HeaderandLineinHomePage title="ALL SCHOOL EVENTS" />
       <div className="container mx-auto px-4 py-8">
         {loading ? (
-          <p className="text-center text-gray-600">
+          <div className="text-center text-gray-600">
             <Spinner />
-          </p>
+          </div>
         ) : currentItems.length > 0 ? (
           <div className="mt-8">
             {currentItems.map((content) => (

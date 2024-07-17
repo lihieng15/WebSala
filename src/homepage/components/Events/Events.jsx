@@ -7,7 +7,7 @@ const Events = () => {
     <div>
       <HeaderandLineinHomePage title={`SCHOOL EVENTS`} />
       <div className="flex justify-center items-center px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-7xl">
+        <div className="w-full max-w-6xl">
           <GetContentsByEvents />
         </div>
       </div>

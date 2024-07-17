@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { useInView } from "react-intersection-observer";
 const ContentCardN = ({ content }) => {
   const { id, title, description, thumbnail } = content;
 
@@ -16,9 +17,14 @@ const ContentCardN = ({ content }) => {
     title.length > maxLengthTitle
       ? title.substring(0, maxLengthTitle) + "..."
       : title;
-
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
   return (
-    <div className="bg-green-100  border-green-700 mb-4 mx-auto max-w-3xl rounded-lg  shadow-lg">
+    <div
+      ref={ref}
+      className={`${
+        inView ? "slice-in-left" : "opacity-0"
+      } bg-green-100  border-green-700 mb-4 mx-auto max-w-3xl rounded-lg  shadow-lg`}
+    >
       <div className="md:flex">
         <div className="md:w-1/3  hover:scale-110 transition-transform duration-300 bg-green-100 drop-shadow-lg cursor-pointer">
           <Link to={`/new/${content.id}`}>

@@ -3,7 +3,7 @@ import { fetchContentsByArtName } from "../../api/Api";
 import ContentCardN from "../News/ContentCardN";
 import Pagination from "../Pagination";
 import Spinner from "../Spinner";
-
+import HeaderandLineinHomePage from "../HeaderandLineinHomePage";
 const ListAllContentNews = () => {
   const [contents, setContents] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -44,6 +44,7 @@ const ListAllContentNews = () => {
 
   return (
     <div className="bg-green-200 min-h-screen">
+      <HeaderandLineinHomePage title={`ALL SCHOOL NEWS `} />
       <div className="container mx-auto px-4 py-8">
         {loading ? (
           <div className="text-center text-gray-600">

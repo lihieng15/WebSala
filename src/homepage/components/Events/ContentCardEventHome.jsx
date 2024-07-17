@@ -54,8 +54,8 @@ const ContentCardE = ({ content }) => {
         <p className="text-sm text-gray-700 mb-2 p-2 font-khmermont ml-1 h-[78px] break-words text-center">
           <span dangerouslySetInnerHTML={{ __html: truncatedDescription }} />
         </p>
-        <Link to={`/event/${content.id}`} className="flex justify-center">
-          <button className="rounded-sm w-24 h-10 bg-green-400 shadow-sm transform duration-300 hover:scale-x-105 shadow-gray-400 text-white hover:translate-y-[-4px] hover:shadow-md hover:shadow-green-600 hover:bg-green-600 focus:outline-none">
+        <Link to={`/event/${content.id}`} className="flex justify-end">
+          <button className="rounded-sm w-24 h-10 mb-2 mr-2 bg-green-400 shadow-sm transform duration-300 hover:scale-x-105 shadow-gray-400 text-white hover:translate-y-[-4px] hover:shadow-md hover:shadow-green-600 hover:bg-green-600 focus:outline-none">
             Read More
           </button>
         </Link>

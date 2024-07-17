@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 
 const ContentCardN = ({ content }) => {
   const { id, title, description, thumbnail } = content;
@@ -16,10 +17,15 @@ const ContentCardN = ({ content }) => {
     title.length > maxLengthTitle
       ? title.substring(0, maxLengthTitle) + "..."
       : title;
-
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
   return (
-    <div className="bg-green-100  border-green-700 mb-4 mx-auto max-w-3xl rounded-lg overflow-hidden shadow-lg">
-      <div className="md:flex">
+    <div
+      ref={ref}
+      className={`bg-green-100  border-green-700 mb-4 mx-auto max-w-3xl rounded-lg overflow-hidden shadow-lg ${
+        inView ? "slice-in-left" : "opacity-0"
+      }`}
+    >
+      <div className="md:flex ">
         <div className="md:w-1/3  hover:scale-110 transition-transform duration-300 drop-shadow-lg cursor-pointer">
           <Link to={`/event/${content.id}`}>
             <img
@@ -41,9 +47,12 @@ const ContentCardN = ({ content }) => {
             <p className="font-mono">Published Date : </p>
             <p> {content.createdAt}</p>
           </div>
-          <div className="flex font-semibold text-lg justify-end">
-            <Link to={`/event/${id}`} className="text-green-700 underline">
-              View Details
+          <div className="flex text-md justify-end">
+            <Link
+              to={`/event/${id}`}
+              className="rounded-sm w-24 text-center pt-2 h-10 mb-2 mr-2 bg-green-400 shadow-sm transform duration-300 hover:scale-x-105 shadow-gray-400 text-white hover:translate-y-[-4px] hover:shadow-md hover:shadow-green-600 hover:bg-green-600 focus:outline-none"
+            >
+              Read More
             </Link>
           </div>
         </div>
