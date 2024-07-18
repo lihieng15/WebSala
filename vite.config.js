@@ -19,7 +19,7 @@ export default defineConfig({
       host:
         process.env.NODE_ENV === "production"
           ? "southwest-internationalschool.site"
-          : "localhost",
+          : "southwest-internationalschool.site",
       port: process.env.NODE_ENV === "production" ? 443 : 8000,
     },
   },
