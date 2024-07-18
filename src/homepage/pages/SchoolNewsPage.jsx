@@ -1,7 +1,7 @@
 import React from "react";
 import News from "../components/News/News";
 
-const EventsPage = () => {
+const SchoolNewsPage = () => {
   return (
     <div>
       <News />
@@ -9,4 +9,4 @@ const EventsPage = () => {
   );
 };
 
-export default EventsPage;
+export default SchoolNewsPage;

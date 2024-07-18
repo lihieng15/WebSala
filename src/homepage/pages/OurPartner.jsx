@@ -16,7 +16,7 @@ const OurPartner = () => {
         }`}
       >
         <img
-          className="w-full h-[130px] "
+          className="w-full h-[130px]"
           src={OurPartnerImage}
           alt="Our Partner"
         />
