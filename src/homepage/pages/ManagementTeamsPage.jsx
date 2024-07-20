@@ -42,7 +42,7 @@ const ManagementTeamsPage = () => {
   const totalPages = Math.ceil(teamMembers.length / pageSize);
 
   return (
-    <div className="w-full min-h-screen bg-green-100">
+    <div className="w-full min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-12 text-center">
           Management Teams

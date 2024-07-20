@@ -6,7 +6,7 @@ import logoSmall from "../../assets/SISlogo2.png";
 
 const NavHeader = () => {
   return (
-    <div className="flex items-center ">
+    <div className="flex items-center  ">
       <Link to="/" className="flex items-center">
         <img
           src={logoLarge}
@@ -16,10 +16,10 @@ const NavHeader = () => {
         <img
           src={logoSmall}
           alt="Southwest International School"
-          className="block md:block md:h12 lg:hidden  h-16"
+          className="block md:block md:h-12 lg:hidden  h-16"
         />
       </Link>
-      <p className="block lg:hidden md:hidden text-2xl ml-8 text-green-700 text-center font-bold font-serif">
+      <p className="block ml-24 lg:hidden  text-2xl md:ml-64 text-green-700 text-center font-bold font-serif">
         SIS
       </p>
     </div>

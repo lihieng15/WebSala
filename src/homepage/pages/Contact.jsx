@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { fetchData } from "../api/Api";
 import ContactForm from "../components/Contact/ContactForm";
 import ContactInformation from "../components/Contact/ContactInformation";
-import TitleComponent from "../components/Contact/TitleComponent";
+import HeaderandLineinHomePage from "../components/HeaderandLineinHomePage";
 import { useInView } from "react-intersection-observer";
 
 const Contact = () => {
@@ -72,9 +72,9 @@ const Contact = () => {
       : description;
 
   return (
-    <div className="bg-yellow-100 py-12">
-      <TitleComponent title="CONTACT US" />
-      <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-yellow-50 py-12 ">
+      <HeaderandLineinHomePage title="CONTACT US" />
+      <div className="max-w-[1000px] mx-auto px-4 mt-10 sm:px-6 lg:px-8">
         <div className="bg-yellow-200 shadow-md rounded-lg overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div

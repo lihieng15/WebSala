@@ -29,7 +29,9 @@ const ContentCardNewsHome = ({ content, isMain }) => {
   return (
     <div
       ref={ref}
-      className={`flex ${isMain ? "flex-col" : ""} border rounded-sm ${
+      className={`flex ${
+        isMain ? "flex-col" : ""
+      } shadow-white shadow-md rounded-sm ${
         inView ? "slice-in-right" : "opacity-0"
       }`}
       style={{ maxWidth: "100%" }}
@@ -37,13 +39,13 @@ const ContentCardNewsHome = ({ content, isMain }) => {
       <div
         className={`${
           isMain ? "w-full" : "w-2/5"
-        } hover:scale-105 transition-transform duration-300 drop-shadow-lg cursor-pointer`}
+        } hover:scale-105 transition-transform duration-300 shadow-white shadow-md  cursor-pointer`}
       >
         <Link to={`/content/${content.id}`}>
           <img
             src={thumbnail}
             alt={errorImage}
-            className="w-full h-[200px] rounded-l-sm bg-green-100 drop-shadow-lg"
+            className="w-full h-[200px] rounded-l-sm bg-gray-50 drop-shadow-lg"
           />
         </Link>
       </div>

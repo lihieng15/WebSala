@@ -30,7 +30,7 @@ const GetTeamsMembers = () => {
 
   return (
     <div>
-      <div className="bg-green-50 pt-16">
+      <div className="bg-white pt-16">
         <div className="max-w-screen-lg mx-auto px-4">
           <div
             className={` grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16`}
@@ -46,7 +46,7 @@ const GetTeamsMembers = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center ">
+      <div className="flex justify-center mb-10">
         <Link to="/managementteams">
           <button className="bg-green-400 shadow-sm transform  duration-300 hover:scale-x-105 shadow-gray-400  text-white hover:translate-y-[-4px] hover:shadow-md hover:shadow-green-600 hover:bg-green-600 focus:outline-none py-2 mt-8 px-4 rounded-sm">
             Read More

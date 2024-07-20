@@ -23,10 +23,10 @@ const ContentCardN = ({ content }) => {
       ref={ref}
       className={`${
         inView ? "slice-in-left" : "opacity-0"
-      } bg-green-100  border-green-700 mb-4 mx-auto max-w-3xl rounded-lg  shadow-lg`}
+      } bg-gray-100  border-green-700 mb-4 mx-auto max-w-3xl rounded-lg  shadow-lg`}
     >
       <div className="md:flex">
-        <div className="md:w-1/3  hover:scale-110 transition-transform duration-300 bg-green-100 drop-shadow-lg cursor-pointer">
+        <div className="md:w-1/3  hover:scale-110 transition-transform duration-300 bg-gray-100 drop-shadow-lg cursor-pointer">
           <Link to={`/new/${content.id}`}>
             <img
               className="w-full h-auto md:h-full object-cover"
@@ -48,7 +48,7 @@ const ContentCardN = ({ content }) => {
             <p> {content.createdAt}</p>
           </div>
           <div className="flex font-semibold text-lg justify-end">
-            <Link to={`/new/${id}`} className="text-green-700 underline">
+            <Link to={`/new/${id}`} className="text-green-500 underline">
               <p className="text-right  hover:translate-y-[-6px] hover:scale-x-100  ">
                 View Detail
               </p>

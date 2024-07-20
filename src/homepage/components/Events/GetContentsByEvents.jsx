@@ -101,9 +101,9 @@ const GetContentsByEvents = () => {
           No Events found.
         </p>
       )}
-      <div className="flex justify-center mt-14">
+      <div className="flex justify-center mt-14 ">
         <Link to="/schoolevents">
-          <button className="bg-green-400 shadow-sm transform duration-300 hover:scale-x-105 shadow-gray-400 text-white hover:translate-y-[-4px] hover:shadow-md hover:shadow-green-600 hover:bg-green-600 focus:outline-none py-2 px-4 rounded-sm">
+          <button className="bg-green-400 mb-10 shadow-sm transform duration-300 hover:scale-x-105 shadow-gray-400 text-white hover:translate-y-[-4px] hover:shadow-md hover:shadow-green-600 hover:bg-green-600 focus:outline-none py-2 px-4 rounded-sm">
             See All Events
           </button>
         </Link>

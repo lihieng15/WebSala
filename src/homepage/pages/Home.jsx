@@ -9,7 +9,7 @@ import Popup from "../components/Popup";
 
 const Home = () => {
   return (
-    <div className="bg-green-50">
+    <div className="bg-gray-50">
       <Popup />
 
       <div className="font-robot">
@@ -20,7 +20,7 @@ const Home = () => {
         <News />
       </div>
 
-      <div className="mb-10 font-robot">
+      <div className="font-robot">
         <ManagementTeams />
       </div>
 

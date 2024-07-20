@@ -43,7 +43,7 @@ const ListAllContentNews = () => {
   const currentItems = contents.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="bg-green-200 min-h-screen">
+    <div className="bg-gray-50 min-h-screen">
       <HeaderandLineinHomePage title={`ALL SCHOOL NEWS `} />
       <div className="container mx-auto px-4 py-8">
         {loading ? (

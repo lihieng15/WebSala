@@ -3,7 +3,7 @@ import React from "react";
 
 const MobileMenuToggle = ({ menuOpen, setMenuOpen }) => {
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         className="text-green-600 focus:outline-none focus:text-green-800"
         onClick={() => setMenuOpen(!menuOpen)}

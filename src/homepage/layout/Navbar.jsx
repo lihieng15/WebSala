@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import MobileMenu from "../components/Navbar/MobileMenu";
 import useContentFetcher from "../hooks/useContentFetcher";
@@ -8,9 +8,13 @@ import NavHeader from "../components/Navbar/NavHeader";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const ourProgramsContents = useContentFetcher("Our Programs");
-  const admissionContents = useContentFetcher("Admissions");
-  const activitiesContents = useContentFetcher("Activities");
+
+  const { contents: ourProgramsContents, loading: loadingOurPrograms } =
+    useContentFetcher("Our Programs");
+  const { contents: admissionContents, loading: loadingAdmissions } =
+    useContentFetcher("Admissions");
+  const { contents: activitiesContents, loading: loadingActivities } =
+    useContentFetcher("Activities");
 
   const [hoveredMenu, setHoveredMenu] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -87,33 +91,36 @@ const Navbar = () => {
     setHoveredMenu(null);
   };
 
-  const menuItems = [
-    { key: "/about", label: "About" },
-    {
-      key: "/ourprograms",
-      label: "Our Programs",
-      children: reduceContent(ourProgramsContents),
-      mobileChildren: flattenContent(reduceContent(ourProgramsContents)),
-    },
-    {
-      key: "/admission",
-      label: "Admissions",
-      children: reduceContent(admissionContents),
-      mobileChildren: flattenContent(reduceContent(admissionContents)),
-    },
-    {
-      key: "/activities",
-      label: "Activities",
-      children: reduceContent(activitiesContents),
-      mobileChildren: flattenContent(reduceContent(activitiesContents)),
-    },
-    { key: "/contact", label: "Contact Us" },
-  ];
+  const menuItems = useMemo(
+    () => [
+      { key: "/about", label: "About" },
+      {
+        key: "/ourprograms",
+        label: "Our Programs",
+        children: reduceContent(ourProgramsContents),
+        mobileChildren: flattenContent(reduceContent(ourProgramsContents)),
+      },
+      {
+        key: "/admission",
+        label: "Admissions",
+        children: reduceContent(admissionContents),
+        mobileChildren: flattenContent(reduceContent(admissionContents)),
+      },
+      {
+        key: "/activities",
+        label: "Activities",
+        children: reduceContent(activitiesContents),
+        mobileChildren: flattenContent(reduceContent(activitiesContents)),
+      },
+      { key: "/contact", label: "Contact Us" },
+    ],
+    [ourProgramsContents, admissionContents, activitiesContents]
+  );
 
   return (
     <>
       <header
-        className={`shadow-md shadow-gray-400 h-[90px] bg-green-50 bg-opacity-100 fixed top-0 w-full z-50 transition-all duration-300 ${
+        className={`shadow-md shadow-gray-400 h-[90px] bg-gray-50 bg-opacity-100 fixed top-0 w-full z-50 transition-all duration-300 ${
           navbarShadow ? "shadow-lg" : "shadow-md"
         } ${
           mouseOverNavbar
@@ -126,7 +133,7 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-between items-center py-4 px-6 h-full">
           <NavHeader />
           <nav className="flex items-center">
-            <ul className="hidden md:flex text-md font-bold drop-shadow-lg space-x-6">
+            <ul className="hidden md:hidden lg:flex text-md font-bold drop-shadow-lg space-x-6">
               {menuItems.map((item) => (
                 <MenuItem
                   key={item.key}

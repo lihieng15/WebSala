@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 
-const ContentCardN = ({ content }) => {
+const ContentCardE = ({ content }) => {
   const { id, title, description, thumbnail } = content;
 
   const maxLengthTitle = 34;
@@ -21,7 +21,7 @@ const ContentCardN = ({ content }) => {
   return (
     <div
       ref={ref}
-      className={`bg-green-100  border-green-700 mb-4 mx-auto max-w-3xl rounded-lg overflow-hidden shadow-lg ${
+      className={`bg-gray-100  border-green-700 mb-4 mx-auto max-w-3xl rounded-lg overflow-hidden shadow-lg ${
         inView ? "slice-in-left" : "opacity-0"
       }`}
     >
@@ -61,4 +61,4 @@ const ContentCardN = ({ content }) => {
   );
 };
 
-export default ContentCardN;
+export default ContentCardE;

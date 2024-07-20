@@ -17,7 +17,7 @@ const MobileMenu = ({ menuItems, onClose }) => {
   };
 
   return (
-    <div className="md:hidden bg-white shadow-lg fixed top-[90px] left-0 w-full z-10">
+    <div className="lg:hidden bg-white shadow-lg fixed top-[90px] left-0 w-full z-10">
       <nav className="px-2 pt-2 pb-4 space-y-1">
         {menuItems.map((item) => (
           <div key={item.key}>

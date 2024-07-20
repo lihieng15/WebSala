@@ -4,8 +4,6 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { InView } from "react-intersection-observer";
 import Spinner from "../components/Spinner";
-import { MdNavigateNext } from "react-icons/md";
-import { GrFormPrevious } from "react-icons/gr";
 
 const BannerCard = () => {
   const [slides, setSlides] = useState([]);

@@ -3,7 +3,7 @@ import { fetchData } from "../api/Api";
 import Spinner from "../components/Spinner";
 import HexagonSection from "../components/About/HexagonSection";
 import GetContentsByAbout from "../components/About/GetContentsByAbout";
-import AboutTitle from "../components/About/AboutTitle";
+import HeaderandLineinHomePage from "../components/HeaderandLineinHomePage";
 import AlbumSection from "../components/About/AlbumSection";
 
 const AboutPage = () => {
@@ -51,13 +51,13 @@ const AboutPage = () => {
 
   return (
     <div>
-      <div className="bg-green-200 p-8">
-        <AboutTitle />
-        <div className="max-w-[1200px] mx-auto">
+      <div className="bg-gray-100 p-8">
+        <HeaderandLineinHomePage title="ABOUT US" />
+        <div className="max-w-[1200px] mb-10 mx-auto">
           <GetContentsByAbout />
         </div>
       </div>
-      <div className="h-auto bg-green-300">
+      <div className="h-auto bg-green-50">
         <HexagonSection />
       </div>
       {Array.isArray(content.albumList) && content.albumList.length > 0 && (

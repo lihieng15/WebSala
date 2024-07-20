@@ -26,7 +26,9 @@ const ContentCardMainNews = ({ content, isMain }) => {
   return (
     <div
       ref={ref}
-      className={`flex ${isMain ? "flex-col" : "mb-4"} rounded-lg ${
+      className={`flex ${
+        isMain ? "flex-col" : "mb-4"
+      } shadow-white shadow-md  rounded-lg ${
         isMain && inView ? "slice-in-left" : "opacity-0"
       }`}
     >
@@ -39,7 +41,7 @@ const ContentCardMainNews = ({ content, isMain }) => {
           <img
             src={thumbnail}
             alt={errorImage}
-            className="w-full h-[420px] drop-shadow-lg border-2 rounded-t-md bg-green-100"
+            className="w-full h-[420px] shadow-white shadow-md  border-2 rounded-t-md bg-gray-50"
           />
         </Link>
       </div>
