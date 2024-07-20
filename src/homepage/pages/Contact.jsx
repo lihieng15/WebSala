@@ -75,7 +75,7 @@ const Contact = () => {
     <div className="bg-yellow-50 py-12 ">
       <HeaderandLineinHomePage title="CONTACT US" />
       <div className="max-w-[1000px] mx-auto px-4 mt-10 sm:px-6 lg:px-8">
-        <div className="bg-yellow-200 shadow-md rounded-lg overflow-hidden">
+        <div className="bg-yellow-100 shadow-md rounded-lg overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div
               ref={ref}

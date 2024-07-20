@@ -10,7 +10,7 @@ const SocialMediaLinks = () => {
       <div className="flex justify-center mt-2 space-x-4">
         <a
           href="https://web.facebook.com/EducationSHV"
-          className="text-white hover:text-blue-700"
+          className="text-blue-700 hover:text-blue-900"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -18,7 +18,7 @@ const SocialMediaLinks = () => {
         </a>
         <a
           href="https://t.me/southwest_intl_school"
-          className="text-white hover:text-cyan-600"
+          className="text-blue-500 hover:text-blue-700"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -26,7 +26,7 @@ const SocialMediaLinks = () => {
         </a>
         <a
           href="https://www.instagram.com/southwest_international_school/"
-          className="text-white hover:text-pink-400"
+          className="text-pink-400 hover:text-pink-600"
           target="_blank"
           rel="noopener noreferrer"
         >

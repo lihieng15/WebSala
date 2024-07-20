@@ -15,7 +15,7 @@ const TeamCard = ({ member }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <img
-        className="w-full h-64 object-cover object-center"
+        className="w-full h-72 object-cover object-center"
         src={imageUrl}
         alt={name}
       />

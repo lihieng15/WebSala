@@ -3,7 +3,7 @@ import useFetchTeams from "../hooks/useFetchTeams";
 import TeamCard from "../components/ManagementTeams/TeamsCardPage";
 import Spinner from "../components/Spinner";
 import Pagination from "../components/Pagination";
-
+import HeaderandLineinHomePage from "../components/HeaderandLineinHomePage";
 const ManagementTeamsPage = () => {
   const pageSize = 12;
   const [page, setPage] = useState(1);
@@ -44,10 +44,8 @@ const ManagementTeamsPage = () => {
   return (
     <div className="w-full min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-12 text-center">
-          Management Teams
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <HeaderandLineinHomePage title={`MANAGEMENT TEAMS`} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
           {teamMembers.map((member) => (
             <div key={member.id} className="flex justify-center">
               <TeamCard member={member} />

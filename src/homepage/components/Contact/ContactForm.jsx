@@ -32,7 +32,7 @@ const ContactForm = ({ formData, handleChange, handleSubmit }) => {
       </div>
       <button
         type="submit"
-        className="w-full py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition duration-300"
+        className="w-full py-3 bg-green-400 text-white font-semibold rounded-md hover:bg-green-600 transition duration-300"
       >
         Send Message
       </button>

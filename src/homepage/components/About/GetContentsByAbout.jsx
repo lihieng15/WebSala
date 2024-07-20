@@ -24,10 +24,10 @@ const GetContentsByAbout = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-row max-w-screen-xl justify-between">
+      <div className="flex flex-wrap max-w-screen-xl  justify-between">
         <div
           ref={ref}
-          className={`flex flex-col w-[550px] shadow-lg shadow-gray-900 p-4 hover:scale-105 hover:shadow-2xl hover:shadow-green-700 h-auto transition-transform duration-500 ${
+          className={`flex flex-col w-[550px] shadow-md mt-10 shadow-gray-900 p-4 hover:scale-105 hover:shadow-lg hover:shadow-green-400 h-auto transition-transform duration-500 ${
             inView ? "slice-in-left" : "opacity-0"
           }`}
         >
@@ -53,7 +53,7 @@ const GetContentsByAbout = () => {
         </div>
         <div
           ref={ref}
-          className={`flex flex-col w-[550px] shadow-lg shadow-gray-900 p-4 hover:scale-105 hover:shadow-2xl hover:shadow-green-700 h-auto transition-transform duration-500 ${
+          className={`flex flex-col w-[550px] shadow-md  mt-10 shadow-gray-900 p-4 hover:scale-105 hover:shadow-lg hover:shadow-green-400 h-auto transition-transform duration-500 ${
             inView ? "slice-in-right" : "opacity-0"
           }`}
         >
