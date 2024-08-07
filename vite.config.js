@@ -9,19 +9,19 @@ export default defineConfig({
     port: 8000,
     proxy: {
       "/api": {
-        target: "https://api.southwest-internationalschool.site/api/",
+        target: "https://api.southwest-internationalschool.site/",
         changeOrigin: true,
         secure: true,
       },
     },
-    hmr: {
-      protocol: process.env.NODE_ENV === "production" ? "wss" : "ws",
-      host:
-        process.env.NODE_ENV === "production"
-          ? "southwest-internationalschool.site"
-          : "southwest-internationalschool.site",
-      port: process.env.NODE_ENV === "production" ? 443 : 8000,
-    },
+    // hmr: {
+    //   protocol: process.env.NODE_ENV === "production" ? "wss" : "ws",
+    //   host:
+    //     process.env.NODE_ENV === "production"
+    //       ? "southwest-internationalschool.site"
+    //       : "southwest-internationalschool.site",
+    //   port: process.env.NODE_ENV === "production" ? 443 : 8000,
+    // },
   },
   preview: {
     host: true,

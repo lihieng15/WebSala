@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchContentsByArtName } from "../../api/Api";
-import ContentCardE from "../Events/ContentCardE";
+import ContentCardA from "../Activities/ContentCardA";
 import Pagination from "../Pagination";
 import Spinner from "../Spinner";
 import HeaderandLineinHomePage from "../HeaderandLineinHomePage";
@@ -9,8 +9,8 @@ const ListAllContentEvents = () => {
   const [contents, setContents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
-  const articleName = "School Events";
+  const itemsPerPage = 9;
+  const articleName = "Activities";
 
   useEffect(() => {
     const fetchContents = async () => {
@@ -18,8 +18,9 @@ const ListAllContentEvents = () => {
         const response = await fetchContentsByArtName(articleName);
 
         if (response && Array.isArray(response.object)) {
-          // Sort contents by id in descending order
-          const sortedContents = response.object.sort((a, b) => b.id - a.id);
+          const sortedContents = response.object.sort(
+            (a, b) => new Date(b.id) - new Date(a.id)
+          );
           setContents(sortedContents);
         } else {
           console.error("No articles found for the specified category");
@@ -47,17 +48,17 @@ const ListAllContentEvents = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <HeaderandLineinHomePage title="ALL SCHOOL EVENTS" />
+      <HeaderandLineinHomePage title="ALL ACTIVITIES " />
       <div className="container mx-auto px-4 py-8">
         {loading ? (
           <div className="text-center text-gray-600">
             <Spinner />
           </div>
         ) : currentItems.length > 0 ? (
-          <div className="mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
             {currentItems.map((content) => (
               <div key={content.id} className="px-2">
-                <ContentCardE content={content} />
+                <ContentCardA content={content} />
               </div>
             ))}
           </div>

@@ -109,8 +109,8 @@ const Navbar = () => {
       {
         key: "/activities",
         label: "Activities",
-        children: reduceContent(activitiesContents),
-        mobileChildren: flattenContent(reduceContent(activitiesContents)),
+        // children: reduceContent(activitiesContents),
+        // mobileChildren: flattenContent(reduceContent(activitiesContents)),
       },
       { key: "/contact", label: "Contact Us" },
     ],

@@ -17,7 +17,9 @@ const ListAllContentNews = () => {
         const response = await fetchContentsByArtName(articleName);
 
         if (response && Array.isArray(response.object)) {
-          setContents(response.object);
+          // Sort contents by id in descending order
+          const sortedContents = response.object.sort((a, b) => b.id - a.id);
+          setContents(sortedContents);
         } else {
           console.error("No articles found for the specified category");
           setContents([]);

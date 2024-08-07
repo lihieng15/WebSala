@@ -11,6 +11,7 @@ import SingleMember from "./homepage/components/ManagementTeams/SingleMember";
 import SingleContent from "./homepage/components/Contents/SingleContent";
 import ListAllContentNews from "./homepage/components/News/ListAllContentNews";
 import ListAllContentEvents from "./homepage/components/Events/ListAllContentEvent";
+import ListAllContentActivities from "./homepage/components/Activities/ListAllContentActivities";
 const App = () => {
   return (
     <>
@@ -29,8 +30,10 @@ const App = () => {
             {/* news */}
             <Route path="/schoolnews" element={<ListAllContentNews />} />
             <Route path="/schoolevents" element={<ListAllContentEvents />} />
+            <Route path="/activities" element={<ListAllContentActivities />} />
             <Route path="/new/:id" element={<SingleContent />} />
             <Route path="/event/:id" element={<SingleContent />} />
+            <Route path="/activities/:id" element={<SingleContent />} />
             {/* <Route path="/new/:title" element={<SchoolNewsPage />} /> */}
             {/* <Route path="/contents" element={<ContentList />} /> */}
             <Route path="/content/:id" element={<SingleContent />} />

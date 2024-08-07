@@ -23,22 +23,33 @@ const GetTeamsMembers = () => {
     );
   }
 
+  const relevantRoles = [
+    "Chairman",
+    "Manager",
+    "Principal",
+    "Administration Director",
+  ];
+
+  const filteredTeamMembers = teamMembers.filter((member) =>
+    relevantRoles.includes(member.description)
+  );
+
   const displayedTeamMembers =
-    teamMembers && teamMembers.length > 4
-      ? teamMembers.slice(0, 3)
-      : teamMembers;
+    filteredTeamMembers.length > 4
+      ? filteredTeamMembers.slice(0, 3)
+      : filteredTeamMembers;
 
   return (
     <div>
       <div className="bg-white pt-16">
         <div className="max-w-screen-lg mx-auto px-4">
           <div
-            className={` grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16`}
+            className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16`}
           >
             {displayedTeamMembers.map((member) => (
               <div
                 key={member.id}
-                className={` transform transition-transform duration-300 hover:scale-105 cursor-pointer`}
+                className={`transform transition-transform duration-300 hover:scale-105 cursor-pointer`}
               >
                 <TeamCardHome member={member} />
               </div>
@@ -48,7 +59,7 @@ const GetTeamsMembers = () => {
       </div>
       <div className="flex justify-center mb-10">
         <Link to="/managementteams">
-          <button className="bg-green-400 shadow-sm transform  duration-300 hover:scale-x-105 shadow-gray-400  text-white hover:translate-y-[-4px] hover:shadow-md hover:shadow-green-600 hover:bg-green-600 focus:outline-none py-2 mt-8 px-4 rounded-sm">
+          <button className="bg-green-400 shadow-sm transform duration-300 hover:scale-x-105 shadow-gray-400 text-white hover:translate-y-[-4px] hover:shadow-md hover:shadow-green-600 hover:bg-green-600 focus:outline-none py-2 mt-8 px-4 rounded-sm">
             Read More
           </button>
         </Link>

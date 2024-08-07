@@ -35,10 +35,10 @@ const GetContentsByAbout = () => {
           <p>
             Southwest International School was founded on the principles of
             academic rigor and community engagement. Since its establishment in
-            [year of establishment], the school has grown into a distinguished
-            institution known for its commitment to excellence and dedication to
-            student development. Over the years, Southwest International School
-            has built a rich history of providing quality education, nurturing
+            2020, the school has grown into a distinguished institution known
+            for its commitment to excellence and dedication to student
+            development. Over the years, Southwest International School has
+            built a rich history of providing quality education, nurturing
             critical thinkers, effective communicators, and compassionate
             leaders poised to make a positive impact on society. The legacy of
             the school is marked by its unique offerings, including a diverse
@@ -60,20 +60,19 @@ const GetContentsByAbout = () => {
           <h3 className="text-2xl font-bold">Envision</h3>
           <p>
             We strive to provide a rigorous and comprehensive education that
-            prepares students for success in a rapidly changing world. Vision
-            With a vision to be a leading institution of educational excellence,
+            prepares students for success in a rapidly changing world. With a
+            vision to be a leading institution of educational excellence,
             Southwest International School aims to cultivate a culture of
-            continuous improvement and innovation. Student-Centered Approach At
-            Southwest International School, students are at the heart of
-            everything we do. We encourage intellectual curiosity, creativity,
-            and critical thinking through a variety of extracurricular
-            activities, clubs, and community service initiatives. Our aim is to
-            provide a holistic education that nurtures both academic excellence
-            and personal growth. Community Engagement We believe in the
-            importance of fostering strong partnerships with parents, alumni,
-            and the wider community. Through collaborative efforts and outreach
-            programs, we aim to instill values of empathy, integrity, and social
-            responsibility in our students.
+            continuous improvement and innovation. At Southwest International
+            School, students are at the heart of everything we do. We encourage
+            intellectual curiosity, creativity, and critical thinking through a
+            variety of extracurricular activities, clubs, and community service
+            initiatives. Our aim is to provide a holistic education that
+            nurtures both academic excellence and personal growth. We believe in
+            the importance of fostering strong partnerships with parents,
+            alumni, and the wider community. Through collaborative efforts and
+            outreach programs, we aim to instill values of empathy, integrity,
+            and social responsibility in our students.
           </p>
         </div>
       </div>
